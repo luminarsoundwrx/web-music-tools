@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Virtual Piano Online | Play Chords in Your Browser</title>
+  <meta name="description" content="Play a free virtual piano online using your computer keyboard or MIDI controller. Build major, minor and diminished chords and add seventh extensions.">
+  <link rel="canonical" href="/virtual-piano/">
+  <meta name="robots" content="index,follow">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/style.css">
+  <script src="../assets/config.js"></script>
+  <script defer src="../assets/js/site.js"></script>
+  <script defer src="../assets/js/monetization.js"></script>
+  <script defer src="../assets/js/piano.js"></script>
+</head>
+<body>
+<header class="site-header"><div class="header-inner">
+  <a class="brand" href="/">Web Music Tools</a>
+  <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-label="Toggle navigation">Menu</button>
+  <nav class="site-nav" data-site-nav aria-label="Main navigation">
+    <a class="active" href="/virtual-piano/">Virtual Piano</a><a href="/bpm-finder/">BPM Finder</a><a href="/circle-of-fifths/">Circle of Fifths</a><a href="/voice-harmonizer/">Voice Harmonizer</a>
+  </nav>
+</div></header>
+
+<div class="site-shell">
+  <aside class="ad-rail" aria-label="Advertisement"><div class="ad-rail-inner"><div class="ad-slot" data-ad-slot-key="leftRail" data-ad-format="vertical">Ad space</div></div></aside>
+  <main class="page-content">
+    <section class="hero"><div class="eyebrow">Interactive keyboard</div><h1>Virtual Piano & Chord Player</h1><p>Play an acoustic-style piano in your browser, trigger chords from one key, identify notes and use an external MIDI keyboard. Audio loads only when you interact with the piano.</p></section>
+
+    <section class="tool-surface" aria-label="Virtual piano">
+      <div id="audio-status" class="audio-status"><span id="audio-status-text">Audio is off until you play or enable it.</span><button id="enable-audio-btn" type="button">Enable audio</button></div>
+      <div class="controls piano-top-controls"><div class="controls-left">
+        <div class="control-group"><label>Octave: <span id="octave-display">3</span></label><button id="oct-down" type="button">- (1)</button><button id="oct-up" type="button">+ (2)</button></div>
+        <div class="control-group"><label class="switch"><input type="checkbox" id="reverb-toggle"><span class="slider-switch round"></span></label><label for="reverb-toggle">Reverb</label><div class="knob-container"><span class="knob-label">Dry</span><input type="range" id="reverb-wet" min="0" max="1" step="0.05" value="0.5" aria-label="Reverb mix"><span class="knob-label">Wet</span></div></div>
+      </div></div>
+      <div class="chord-display-container"><span class="chord-label">Chord played</span><span id="chord-display" class="chord-value">--</span></div>
+      <div class="controls chord-controls">
+        <div class="control-group"><span>Triad Base:</span><button class="mode-btn active" data-group="triad" data-mode="single" type="button">Single (Z)</button><button class="mode-btn" data-group="triad" data-mode="major" type="button">Major (M)</button><button class="mode-btn" data-group="triad" data-mode="minor" type="button">Minor (N)</button><button class="mode-btn" data-group="triad" data-mode="dim" type="button">Dim (,)</button></div>
+        <div class="control-group"><span>Add 7th:</span><button class="mode-btn active" data-group="seventh" data-mode="none" type="button">None (X)</button><button class="mode-btn" data-group="seventh" data-mode="maj7" type="button">Maj 7th (B)</button><button class="mode-btn" data-group="seventh" data-mode="min7" type="button">Min 7th (V)</button></div>
+      </div>
+      <div class="piano-wrapper"><div id="piano" class="piano" aria-label="Virtual piano keyboard"></div></div>
+      <p class="hint">Computer keyboard layout: A = C, W = C♯, S = D and so on. External MIDI keyboards are supported in compatible browsers.</p>
+    </section>
+
+    <div class="ad-slot ad-slot-inline" data-ad-slot-key="inline" data-ad-format="auto">Ad space</div>
+
+    <section class="content-stack">
+      <article class="content-card"><h2>How to use the virtual piano</h2><p>Click or tap a key, or use the mapped computer keyboard keys shown on the piano. Choose a triad mode to turn each played note into a major, minor or diminished chord. Add a major or minor seventh with the seventh controls.</p><p>The audio engine and piano samples are deferred until you interact with the tool, which avoids downloading the full piano library for visitors who never play a note.</p></article>
+      <article class="content-card"><h2>Keyboard shortcuts</h2><p>Use <strong>1</strong> and <strong>2</strong> to change octave. Use <strong>Z</strong> for single notes, <strong>M</strong> for major triads, <strong>N</strong> for minor triads and <strong>,</strong> for diminished triads. <strong>X</strong>, <strong>B</strong> and <strong>V</strong> control seventh extensions.</p></article>
+      <article class="content-card faq"><h2>Virtual piano FAQ</h2><details><summary>Does this work with a MIDI keyboard?</summary><p>Yes, in browsers that support the Web MIDI API. Permission is requested after the audio engine starts.</p></details><details><summary>Why does audio take a moment the first time?</summary><p>The page intentionally postpones Tone.js and the sampled piano files until they are needed. This keeps the initial page lighter.</p></details><details><summary>Can I use it on mobile?</summary><p>Yes. The piano remains horizontally scrollable on narrow screens so the keys keep a usable size.</p></details></article>
+    </section>
+  </main>
+  <aside class="ad-rail" aria-label="Advertisement"><div class="ad-rail-inner"><div class="ad-slot" data-ad-slot-key="rightRail" data-ad-format="vertical">Ad space</div></div></aside>
+</div>
+<footer class="site-footer"><div class="footer-inner"><span>© <span data-current-year></span> Web Music Tools</span><div class="footer-links"><a href="/about.html">About</a><a href="/contact.html">Contact</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></div></div></footer>
+</body></html>
