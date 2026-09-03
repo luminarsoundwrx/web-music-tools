@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Voice Harmonizer | Drop 2, Drop 3 & 4-Way Close Voicings</title>
+  <meta name="description" content="Generate 4-way close, Drop 2, Drop 3 and Drop 2 & 4 chord voicings from a melody note. Preview notation, hear the voicing and export MIDI.">
+  <link rel="canonical" href="/voice-harmonizer/"><meta name="robots" content="index,follow">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="../assets/style.css">
+  <script src="../assets/config.js"></script><script defer src="../assets/js/site.js"></script><script defer src="../assets/js/monetization.js"></script><script defer src="../assets/js/harmonizer.js"></script>
+</head>
+<body>
+<header class="site-header"><div class="header-inner"><a class="brand" href="/">Web Music Tools</a><button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-label="Toggle navigation">Menu</button><nav class="site-nav" data-site-nav><a href="/virtual-piano/">Virtual Piano</a><a href="/bpm-finder/">BPM Finder</a><a href="/circle-of-fifths/">Circle of Fifths</a><a class="active" href="/voice-harmonizer/">Voice Harmonizer</a></nav></div></header>
+<div class="site-shell">
+  <aside class="ad-rail"><div class="ad-rail-inner"><div class="ad-slot" data-ad-slot-key="leftRail" data-ad-format="vertical">Ad space</div></div></aside>
+  <main class="page-content">
+    <section class="hero"><div class="eyebrow">Arranging tool</div><h1>Voice Harmonizer</h1><p>Build 4-way close and drop voicings from a chord and melody note, optionally add a parallel approach voicing, preview notation and download the result as MIDI.</p></section>
+    <section class="tool-surface"><div class="harmonizer-grid">
+      <div class="harm-panel"><h3>Voicing Parameters</h3>
+        <div class="harm-form-group"><label for="harm-technique">Voicing Technique</label><select id="harm-technique"><option value="4way">4-Way Close</option><option value="drop2">Drop 2</option><option value="drop3">Drop 3</option><option value="drop24">Drop 2 &amp; 4</option></select></div>
+        <div class="harm-section-title">Underlying Chord</div><div class="harm-inputs-row"><select id="harm-chord-root" aria-label="Chord root"><option>C</option><option>D</option><option>E</option><option>F</option><option>G</option><option>A</option><option>B</option></select><select id="harm-chord-accidental" aria-label="Chord accidental"><option value="">♮</option><option value="#">#</option><option value="b">b</option></select><select id="harm-chord-type" aria-label="Chord type"><option value="Maj7">Major 7</option><option value="7">Dominant 7</option><option value="m7">Minor 7</option><option value="m7b5">Minor 7b5</option><option value="dim7">Diminished 7</option><option value="Maj6">Major 6</option><option value="m6">Minor 6</option></select></div>
+        <div class="harm-toggle-group" style="justify-content:space-between"><span id="target-mel-title" class="harm-section-title" style="margin:0">Melody Note</span><span style="display:flex;align-items:center;gap:.5rem"><label class="switch"><input type="checkbox" id="harm-approach-toggle"><span class="slider-switch round"></span></label><label for="harm-approach-toggle">Approach</label></span></div>
+        <div class="harm-inputs-row" style="margin-top:.5rem"><select id="harm-mel-note" aria-label="Melody note"><option>C</option><option>D</option><option>E</option><option>F</option><option>G</option><option>A</option><option>B</option></select><select id="harm-mel-accidental" aria-label="Melody accidental"><option value="">♮</option><option value="#">#</option><option value="b">b</option></select><select id="harm-mel-octave" aria-label="Melody octave"><option value="4">Octave 4</option><option value="5" selected>Octave 5</option><option value="6">Octave 6</option></select></div>
+        <div id="approach-inputs" class="disabled-panel"><div class="harm-section-title">Approach Melody Note</div><div class="harm-inputs-row"><select id="harm-app-note" aria-label="Approach note"><option>C</option><option>D</option><option>E</option><option>F</option><option>G</option><option>A</option><option>B</option></select><select id="harm-app-accidental" aria-label="Approach accidental"><option value="">♮</option><option value="#">#</option><option value="b">b</option></select><select id="harm-app-octave" aria-label="Approach octave"><option value="4">Octave 4</option><option value="5" selected>Octave 5</option><option value="6">Octave 6</option></select></div></div>
+        <button id="btn-generate-voicing" class="primary-btn" type="button">Generate Voicing</button><button id="btn-play-voicing" class="secondary-btn" type="button" disabled>Play Voicing</button><a id="btn-download-midi" class="primary-btn disabled-btn" style="display:block;text-align:center;text-decoration:none;margin-top:.5rem" draggable="true">Drag or Click to Download MIDI</a>
+      </div>
+      <div class="harm-panel"><h3>Notation &amp; Analysis</h3><div id="harm-text-readout" class="harm-readout">Fill parameters and generate…</div><div class="vexflow-container" id="vexflow-canvas">Notation appears here after generation.</div></div>
+    </div></section>
+    <div class="ad-slot ad-slot-inline" data-ad-slot-key="inline" data-ad-format="auto">Ad space</div>
+    <section class="content-stack">
+      <article class="content-card"><h2>What the harmonizer generates</h2><p>The tool starts with a four-note close voicing under the selected melody note. Drop techniques then move selected inner voices down by an octave to open the spacing. The MIDI export preserves the generated notes for use in a DAW.</p></article>
+      <article class="content-card"><h2>Deferred audio and notation</h2><p>VexFlow is loaded only when you generate notation, while Tone.js and piano samples load only when you press Play. That keeps the first page load lighter for visitors who only need the note names or MIDI export.</p></article>
+      <article class="content-card faq"><h2>Voice harmonizer FAQ</h2><details><summary>What is Drop 2?</summary><p>Drop 2 takes the second-highest voice of a close-position four-note chord and moves it down one octave, creating a more open voicing.</p></details><details><summary>What does the approach option do?</summary><p>It creates a parallel approach voicing by moving the generated target voices by the same interval as the approach melody note.</p></details></article>
+    </section>
+  </main>
+  <aside class="ad-rail"><div class="ad-rail-inner"><div class="ad-slot" data-ad-slot-key="rightRail" data-ad-format="vertical">Ad space</div></div></aside>
+</div>
+<footer class="site-footer"><div class="footer-inner"><span>© <span data-current-year></span> Web Music Tools</span><div class="footer-links"><a href="/about.html">About</a><a href="/contact.html">Contact</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></div></div></footer>
+</body></html>

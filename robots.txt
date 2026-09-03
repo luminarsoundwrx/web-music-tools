@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Add the production sitemap URL after the final domain is known, for example:
+# Sitemap: https://example.com/sitemap.xml
