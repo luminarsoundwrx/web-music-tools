@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BPM Finder & Tap Tempo Calculator</title>
+  <meta name="description" content="Find the BPM of a song by tapping the beat. Use the space bar or tap button to calculate tempo and average BPM instantly in your browser.">
+  <link rel="canonical" href="/bpm-finder/"><meta name="robots" content="index,follow">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="../assets/style.css">
+  <script src="../assets/config.js"></script><script defer src="../assets/js/site.js"></script><script defer src="../assets/js/monetization.js"></script><script defer src="../assets/js/bpm.js"></script>
+</head>
+<body>
+<header class="site-header"><div class="header-inner"><a class="brand" href="/">Web Music Tools</a><button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-label="Toggle navigation">Menu</button><nav class="site-nav" data-site-nav><a href="/virtual-piano/">Virtual Piano</a><a class="active" href="/bpm-finder/">BPM Finder</a><a href="/circle-of-fifths/">Circle of Fifths</a><a href="/voice-harmonizer/">Voice Harmonizer</a></nav></div></header>
+<div class="site-shell">
+  <aside class="ad-rail"><div class="ad-rail-inner"><div class="ad-slot" data-ad-slot-key="leftRail" data-ad-format="vertical">Ad space</div></div></aside>
+  <main class="page-content">
+    <section class="hero"><div class="eyebrow">Tap tempo</div><h1>BPM Finder</h1><p>Tap along with a song to estimate its tempo. The calculator averages the time between your taps and resets automatically after a two-second pause.</p></section>
+    <section class="tool-surface"><div class="bpm-container"><div class="bpm-display"><span id="bpm-value">0</span> BPM</div><div class="bpm-stats">Taps: <span id="tap-count">0</span> · Average: <span id="tap-avg">0.00</span> BPM</div><button id="bpm-tap-btn" class="primary-btn tap-btn" type="button">Tap the beat</button><p class="hint">You can also tap the <strong>space bar</strong>. Pause for more than two seconds to start a new measurement.</p></div></section>
+    <div class="ad-slot ad-slot-inline" data-ad-slot-key="inline" data-ad-format="auto">Ad space</div>
+    <section class="content-stack">
+      <article class="content-card"><h2>How to find the BPM of a song</h2><p>Start the track, listen for a steady pulse and tap once for each beat. After the second tap, the calculator converts the average interval between taps into beats per minute. Keep tapping for several bars to make the estimate more stable.</p></article>
+      <article class="content-card"><h2>What BPM means</h2><p>BPM stands for beats per minute. A tempo of 120 BPM means two beats occur each second. Producers, DJs, musicians and dancers use BPM to compare tempo, synchronize material and plan transitions.</p></article>
+      <article class="content-card faq"><h2>BPM finder FAQ</h2><details><summary>How many taps should I use?</summary><p>Four to eight steady taps is usually enough for a useful estimate. More taps can reduce the effect of one early or late tap.</p></details><details><summary>Why does the result reset?</summary><p>A pause longer than two seconds is treated as the start of a new tempo measurement.</p></details></article>
+    </section>
+  </main>
+  <aside class="ad-rail"><div class="ad-rail-inner"><div class="ad-slot" data-ad-slot-key="rightRail" data-ad-format="vertical">Ad space</div></div></aside>
+</div>
+<footer class="site-footer"><div class="footer-inner"><span>© <span data-current-year></span> Web Music Tools</span><div class="footer-links"><a href="/about.html">About</a><a href="/contact.html">Contact</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></div></div></footer>
+</body></html>
